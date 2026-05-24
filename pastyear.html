@@ -1,0 +1,199 @@
+<!-- Past Year Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Hub</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+    crossorigin="anonymous">
+    
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary">
+  <div class="container">
+    <a class="navbar-brand" d-flex align-items-center gap-2" href="">
+        <i class="bi bi-mortarboard-fill"></i>
+        Study Hub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="dashboard.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Content
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="notes.html">Notes</a></li>
+            <li><a class="dropdown-item" href="pastyear.html">Past Year</a></li>
+            <li><a class="dropdown-item" href="quiz.html">Quiz</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="lecturer.html">Lecturer</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+
+      <!-- Dark Mode -->
+        <div class="d-flex">
+            <button class="dark-mode-toggle" id="darkModeToggle"
+            title="Toggle Dark Mode">
+                <i class="bi bi-moon-stars-fill" id="darkModeIcon"></i>
+            </button>
+        </div>
+        
+        <!-- Profile Info-->
+        <div class="profile-dropdown" id="profile" title="Profile">
+            <i class="bi bi-person-circle"></i>
+        
+        <!-- The Hidden Menu -->
+        <ul class="dropdown-menu">
+        <li><a href="profile.html">My Profile</a></li>
+        <li><a href="setting.html">Settings</a></li>
+        <hr>
+        <li><a href="index.html">Logout</a></li>
+        </ul>
+        </div>
+            
+    </div>
+  </div>
+</nav>  
+
+<div class="container mt-4">
+
+    <h2>Past Year Papers 📄</h2>
+
+    <!-- FILTER -->
+    <div class="mb-3">
+        <button class="btn btn-outline-primary btn-sm filter-btn" data-course="all">All</button>
+        <button class="btn btn-outline-primary btn-sm filter-btn" data-course="IMS560">IMS560</button>
+        <button class="btn btn-outline-primary btn-sm filter-btn" data-course="IMS565">IMS565</button>
+        <button class="btn btn-outline-primary btn-sm filter-btn" data-course="IMS566">IMS566</button>
+    </div>
+
+    <!-- CARDS -->
+    <div class="row g-3">
+
+        <div class="col-md-4 past-item" data-course="IMS560">
+            <div class="card p-3 shadow-sm">
+                <h5>IMS560 Final Exam</h5>
+                <small>Year: 2025</small>
+                <a href="#" class="btn btn-primary btn-sm mt-2">Download</a>
+            </div>
+        </div>
+
+        <div class="col-md-4 past-item" data-course="IMS565">
+            <div class="card p-3 shadow-sm">
+                <h5>IMS565 Midterm</h5>
+                <small>Year: 2024</small>
+                <a href="#" class="btn btn-primary btn-sm mt-2">Download</a>
+            </div>
+        </div>
+
+        <div class="col-md-4 past-item" data-course="IMS566">
+            <div class="card p-3 shadow-sm">
+                <h5>IMS566 Final Exam</h5>
+                <small>Year: 2023</small>
+                <a href="#" class="btn btn-primary btn-sm mt-2">Download</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+
+    <!-- DarkMode Toggle -->
+    <script>
+        //reference element
+        const darkModeToggle = document.getElementById
+        ('darkModeToggle');
+        const darkModeIcon = document.getElementById
+        ('darkModeIcon');
+        const htmlElement = document.documentElement;
+        
+        //check theme
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-bs-theme', currentTheme);
+        updateIcon(currentTheme);
+
+        //toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'light'? 'dark' : 'light';
+
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        // update icon
+        function updateIcon(theme) {
+            if (theme ==='dark') {
+                darkModeIcon.className = 'bi bi-moon-stars-fill';
+            } else {
+                darkModeIcon.className = 'bi bi-brightness-high-fill';
+            }
+            
+        }
+    </script>
+
+    <!-- Profile Toggle-->
+    <script>
+        const profile = document.getElementById("profile");
+
+        profile.addEventListener("click", function () {
+        profile.classList.toggle("active");
+        });
+    </script>
+
+<script>
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+        let course = btn.dataset.course;
+
+        document.querySelectorAll(".past-item").forEach(item=>{
+            item.style.display = (course==="all" || item.dataset.course===course)
+            ? "block" : "none";
+        });
+    });
+});
+</script>
+<!--*********** JS Section Ends **************-->
+
+<!--************** FOOTER SECTION Start **************-->
+<footer class="study-footer mt-5">
+    <div class="container text-center py-4">
+        <small>
+            © 2026 Nurul Syahindah Binti Hussain | Last Updated: 24 May 2026 <br>
+            Best viewed in Chrome at 1920x1080 resolution | All Rights Reserved.
+        </small>
+    </div>
+</footer>
+<!--************** FOOTER SECTION End **************-->
+
+
+</body>
+</html>

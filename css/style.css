@@ -1,0 +1,366 @@
+/*all*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*LOGIN*/
+
+#biru{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+#biru .form-container{
+    width: 450px;
+    padding: 20px 0;
+    background-color: rgba(113, 172, 240, 0.6);
+    position: relative;
+    border-radius: 25px 25px 20px 20px;
+    box-shadow: #0000001a 0px 4px 12px;
+}
+
+#biru .form-container h1{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+    color:#fff;
+    font-weight:600;
+}
+
+#biru .form-container .form-box{
+    width: 90%;
+    background-color: #fff;
+    position:relative;
+    z-index: 1;
+    box-shadow: #11111a0d 0px 1px 0px, #11111a1a 0px 0px 8px;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 15px;
+}
+
+#biru .form-box form{
+    margin-top: 30px;
+}
+
+#biru .form-box .row{
+    position: relative;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#biru .form-box .row label{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 25px;
+    color: #3a3a3a;
+}
+
+#biru .form-box .row input{
+    width: 100%;
+    height: 45px;
+    padding: 0 30px 0 10px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    border: 1px solid #3b80ff;
+    outline: none;
+}
+
+#biru .form-box .row input::placeholder{
+    font-size: 17px;
+    color: #c8c8c8;
+    line-height: 50px;
+}
+
+#biru .form-box .row.success input{
+    border-color: #2eec71;
+}
+
+#biru .form-box .row.error input{
+    border-color: #e74c3c;
+}
+
+#biru .row small{
+    color: #e74c3c;
+    display: inline;
+    margin: 5px 5px 0 5px;
+    visibility: hidden;
+}
+
+#biru .row.error small{
+    visibility: visible;
+}
+
+#biru .form-box .row i{
+    display:inline-block;
+    position: absolute;
+    top: calc(50% - 6px);
+    right: 10px;
+    visibility: hidden;
+}
+
+#biru .form-box .row.success i.fa-circle-check{
+    color: #2eec71;
+    visibility: visible;
+}
+
+#biru .form-box .row.error i.fa-circle-exclamation{
+    color: #e74c3c;
+    visibility: visible;
+}
+
+/*darkmode*/
+.dark-mode-toggle{
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0.5rem;
+  color: inherit;
+}
+
+.dark-mode-toggle:hover{
+  opacity: 0.7;
+}
+
+/*Profile Dropdown*/
+.profile-dropdown {
+    border-radius: 50%;
+    margin-left: 30px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 28px;
+    color: #333;
+}
+
+.profile-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+
+    width: 160px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+.profile-dropdown.active .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+    background: #f2f2f2;
+}
+
+/*Notes Page*/
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.note-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.note-card h4 {
+    margin-bottom: 10px;
+}
+
+.note-card p {
+    font-size: 13px;
+    color: gray;
+}
+
+.note-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+[data-bs-theme="dark"] .note-card {
+    background: #1e1e1e;
+    color: white;
+}
+
+[data-bs-theme="dark"] .note-card p {
+    color: #000000;
+}
+
+.view-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+
+.view-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #0d6efd;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.view-btn:hover {
+    background: #0b5ed7;
+}
+
+.note-topics {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.note-card.active .note-topics {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.page-title {
+    font-weight: 700;
+}
+
+.search-box {
+    max-width: 400px;
+}
+
+.note-card {
+    border: none;
+    transition: 0.25s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.topic-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+[data-bs-theme="dark"] .note-card p,
+[data-bs-theme="dark"] .note-card small,
+[data-bs-theme="dark"] .note-card h5,
+[data-bs-theme="dark"] .meta-info,
+[data-bs-theme="dark"] .badge-custom {
+    color: white 
+}
+
+table{
+    background: white;
+}
+
+/*navbar*/
+.navbar-brand i {
+    font-size: 20px;
+}
+
+[data-bs-theme="dark"] .navbar .dropdown-menu {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+}
+
+[data-bs-theme="dark"] .navbar .dropdown-menu .dropdown-item {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.profile-dropdown {
+    font-size: 28px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.navbar{
+    padding: 15px;
+}
+
+/*Quiz*/
+.quiz-card {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+.quiz-card:hover {
+    transform: translateY(-5px);
+}
+
+.quiz-meta {
+    font-size: 13px;
+    color: gray;
+}
+
+/*Footer*/
+.study-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e5e5e5;
+    margin-top: auto;
+}
+
+.study-footer small {
+    color: #6c757d;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* DARK MODE */
+[data-bs-theme="dark"] .study-footer {
+    background-color: #121212;
+    border-top: 1px solid #2a2a2a;
+}
+
+[data-bs-theme="dark"] .study-footer small {
+    color: #cccccc;
+}
